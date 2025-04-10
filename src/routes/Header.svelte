@@ -14,18 +14,4 @@
 </div>
 
 <style>
-	:global(div:hover){
-		background-color: red;  
-		border: 2px solid black;
-		border-radius: 8px;
-		padding: 20px;
-		transition: all ease-in-out 2s;
-		font-family: cursive;	
-	}
-
-	h2:hover{ 
-		font-size: 26; /* Same, h2 in +page.svelte won't be affected by this */
-		font-family: cursive;
-		transition: all ease-in 5s;
-	}
 </style>
