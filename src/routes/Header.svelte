@@ -2,15 +2,30 @@
 	// Used lang="ts" bcuz why not
 	let {
 		name,
-		fake_name = null // Put null as value if not using TS
 	}: {
 		name: string;
-		fake_name?: string | null; // Optional prop
 	} = $props(); // Whatever variable we create in {} will have values passed from the usage
 </script>
 
-<h2>{name.replaceAll('o', 'x')}</h2>
-{fake_name}
+<div>
+	{#if name}
+	<h2>{name}'s Form</h2>
+	{/if}
+</div>
 
 <style>
+	:global(div:hover){
+		background-color: red;  
+		border: 2px solid black;
+		border-radius: 8px;
+		padding: 20px;
+		transition: all ease-in-out 2s;
+		font-family: cursive;	
+	}
+
+	h2:hover{ 
+		font-size: 26; /* Same, h2 in +page.svelte won't be affected by this */
+		font-family: cursive;
+		transition: all ease-in 5s;
+	}
 </style>

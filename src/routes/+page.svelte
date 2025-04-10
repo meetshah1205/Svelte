@@ -10,9 +10,10 @@
 </script>
 
 <main>
+	<Header name={formState.name}></Header>
 	<p>Step: {formState.step + 1}</p>
 	{#if formState.error !== ''}
-		<p style="color: red; font-family: sans-serif;">Error: {formState.error}</p>
+		<p class="error">Error: {formState.error}</p>
 	{/if}
 
 	{#if formState.step === 0}
@@ -46,4 +47,16 @@
 			}}>Next</button
 		>
 	{/if}
+
+	<h2> Hover me </h2>
 </main>
+
+
+<style>
+	h2 {
+		color: red;
+		font-family: system-ui;
+		/* font-weight: 500; */
+		padding: 2px;
+	}
+</style>
