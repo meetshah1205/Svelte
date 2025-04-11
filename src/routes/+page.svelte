@@ -10,10 +10,15 @@
 </script>
 
 <main>
-	<Header name={formState.name}></Header>
+	<Header name={formState.name}>
+		<p>Hello</p>
+		{#snippet secondChild(name)}
+			<p>Second child {name}</p>
+		{/snippet}
+	</Header>
 	<p>Step: {formState.step + 1}</p>
-	
-	{@render formStep({question: "What's ur name?", id: "name", type: "text"})}
+
+	{@render formStep({ question: "What's ur name?", id: 'name', type: 'text' })}
 </main>
 
 {#snippet formStep({ question, id, type }: { type: string; id: string; question: string })}
